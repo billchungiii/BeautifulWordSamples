@@ -22,6 +22,6 @@ namespace BeautifulWordSample001.Tests
         [DataRow("aBbbc", false)]
         [DataRow("baac", false)]
         [DataTestMethod ()]
-        public void IsBeautifulTest(string source, bool result) => Assert.AreEqual(source.IsBeautiful(), result);
+        public void IsBeautifulTest(string source, bool result) => Assert.AreEqual (result , source.IsBeautiful());
     }
 }

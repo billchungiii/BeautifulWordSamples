@@ -15,7 +15,7 @@ namespace BeautifulWordSample003
         /// <returns></returns>
         public static bool IsBeautiful(this string source)
         {
-            int current = 0;
+            int last = 0;
 
             return source.ToLower()
                          .OrderByDescending(x => x)
@@ -23,8 +23,8 @@ namespace BeautifulWordSample003
                          .Select(x =>
                          {
                              var count = x.Count();
-                             var result = count > current;
-                             current = count;
+                             var result = count > last;
+                             last = count;
                              return result;
                          })
                          .All(x => x);

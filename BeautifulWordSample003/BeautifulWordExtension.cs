@@ -18,16 +18,16 @@ namespace BeautifulWordSample003
             int last = 0;
 
             return source.ToLower()
-                         .OrderByDescending(x => x)
-                         .GroupBy(x => x)
-                         .Select(x =>
-                         {
-                             var count = x.Count();
-                             var result = count > last;
-                             last = count;
-                             return result;
-                         })
-                         .All(x => x);
+                .OrderByDescending(x => x)
+                .GroupBy(x => x)
+                .All(x =>
+                {
+                    var count = x.Count();
+                    var result = count > last;
+                    last = count;
+                    return result;
+                });
+
         }
     }
 }
